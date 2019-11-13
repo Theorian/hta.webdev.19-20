@@ -1,4 +1,4 @@
-import { MainScene } from './scenes/mainScene.js';
+import { MainScene } from 'mainScene.js';
 
 window.onload = function() {
   // object containing configuration options
