@@ -1,0 +1,58 @@
+body {
+  margin: 0px;
+  font-family: sans-serif;
+  background: lightgray;
+}
+
+h1 {
+  color: rgba(225, 130, 130, 1);
+}
+
+.hero {
+  text-align: center;
+  padding-bottom: 60px;
+  background-size: cover;
+  overflow: hidden;
+  height: 300px;
+}
+
+.logo {
+  max-width: 300px;
+}
+
+.button {
+  margin: 40px;
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(73, 175, 5);
+  font-weight: bold;
+  padding: 20px 70px;
+  font-size: 24px;
+  border: 1px solid #ace04b;
+  background: linear-gradient(0deg, #f8ff00 0%, #89d410 100%);
+  border-radius: 5px;
+  text-shadow: 0px -1px 0px rgb(2, 109, 73);
+  box-shadow: 0px 6px 0px #ace04b, 0px 3px 15px rgba(0, 0, 0, 0.4),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.3),
+    inset 0px 0px 3px rgba(255, 255, 255, 0.5);
+}
+
+.pagecontent {
+  padding-top: 30px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}
+.item {
+  flex: 1 0 200px;
+  padding: 20px;
+  border: 2px solid red;
+  align-self: stretch;
+}
+
+.item img {
+  transform: rotateZ(-20deg);
+  max-width: 400px;
+}
