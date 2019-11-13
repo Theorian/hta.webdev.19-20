@@ -1,4 +1,4 @@
-import { TextButton } from "./text-button.js/index.js";
+import { TextButton } from "./text-button.js";
 
 export class MainScene extends Phaser.Scene {
   create() {

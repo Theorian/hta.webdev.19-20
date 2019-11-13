@@ -1,4 +1,4 @@
-import { MainScene } from 'mainScene.js';
+import { MainScene } from './mainScene.js';
 
 window.onload = function() {
   // object containing configuration options
@@ -8,15 +8,13 @@ window.onload = function() {
     height: 480,
     scene: MainScene,
     backgroundColor: "#000",
-
-    // physics settings
+    pixelArt: true,
     physics: {
       default: "arcade"
     }
   };
   game = new Phaser.Game(gameConfig);
   window.focus();
-  resize();
-  window.addEventListener("resize", resize, false);
+
 };
 

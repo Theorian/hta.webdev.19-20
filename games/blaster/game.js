@@ -2,9 +2,17 @@ window.onload = function() {
   // object containing configuration options
   let gameConfig = {
     type: Phaser.WEBGL,
-    width: 800,
-    height: 600,
+
     backgroundColor: "#000",
+    pixelArt: true,
+    scale: {
+      parent: 'gamediv',
+      mode: Phaser.Scale.RESIZE,
+      autoCenter: Phaser.Scale.CENTER_BOTH,
+      zoom: 1,
+      width: 640,
+      height: 480
+    },
     physics: {
       default: "arcade",
       arcade: {
@@ -20,8 +28,7 @@ window.onload = function() {
   };
   game = new Phaser.Game(gameConfig);
   window.focus();
-  resize();
-  window.addEventListener("resize", resize, false);
+
 };
 
 var bullets;
@@ -32,8 +39,8 @@ var cursors;
 var lastFired = 0;
 
 function preload() {
-  this.load.image("ship", "ship.png");
-  this.load.image("bullet", "bullet.png");
+  this.load.image("ship", "assets/Hero.gif");
+  this.load.image("bullet", "assets/bullet.png");
 }
 
 function create() {
@@ -115,17 +122,4 @@ function update(time, delta) {
   // }
 }
 
-function resize() {
-  let canvas = document.querySelector("canvas");
-  let windowWidth = window.innerWidth;
-  let windowHeight = window.innerHeight;
-  let windowRatio = windowWidth / windowHeight;
-  let gameRatio = game.config.width / game.config.height;
-  if (windowRatio < gameRatio) {
-    canvas.style.width = windowWidth + "px";
-    canvas.style.height = windowWidth / gameRatio + "px";
-  } else {
-    canvas.style.width = windowHeight * gameRatio + "px";
-    canvas.style.height = windowHeight + "px";
-  }
-}
+
