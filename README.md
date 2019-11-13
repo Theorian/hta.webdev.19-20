@@ -1,2 +1,3 @@
 # hta.webdev.19-20
-The description goes here
+Please visit the website to try out the games right now
+https://theorian.github.io/hta.webdev.19-20/
