@@ -4,6 +4,12 @@ body {
   background: lightgray;
 }
 
+img {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
 h1 {
   color: rgba(225, 130, 130, 1);
 }
@@ -13,7 +19,7 @@ h1 {
   padding-bottom: 60px;
   background-size: cover;
   overflow: hidden;
-  height: 250px;
+  /* height: 250px; */
 }
 
 .logo {
