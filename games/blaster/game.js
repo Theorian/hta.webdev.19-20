@@ -35,7 +35,7 @@ var ship;
 var speed;
 var stats;
 var cursors;
-var lastFired = 0;
+var lastFired = 10;
 
 function preload() {
   this.load.image("ship", "assets/HeroShip.png");
@@ -109,7 +109,7 @@ function update(time, delta) {
     if (bullet) {
       Bullet.fire(ship.x, ship.y);
 
-      lastFired = time + 0;
+      lastFired = time + 10;
     }
   }
 
