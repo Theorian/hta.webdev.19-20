@@ -104,7 +104,7 @@ function update(time, delta) {
     if (bullet) {
       bullet.fire(ship.x, ship.y);
 
-      lastFired = time + 50;
+      lastFired = time + 0;
     }
   }
 
