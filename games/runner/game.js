@@ -26,7 +26,7 @@ let gameOptions = {
   playerGravity: 3000,
 
   // player jump force
-  jumpForce: 4000,
+  jumpForce: 1000,
 
   // player starting X position
   playerStartPosition: 200,
