@@ -2,7 +2,6 @@ window.onload = function() {
   // object containing configuration options
   let gameConfig = {
     type: Phaser.WEBGL,
-
     backgroundColor: "#000",
     pixelArt: true,
     scale: {

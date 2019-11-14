@@ -1,6 +1,10 @@
 import { TextButton } from "./text-button.js";
 
 export class MainScene extends Phaser.Scene {
+  constructor ()
+  {
+    super('MainScene');
+  }
   create() {
     this.clickCount = 0;
     this.clickCountText = this.add.text(100, 200, "");

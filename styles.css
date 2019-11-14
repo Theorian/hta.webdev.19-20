@@ -44,16 +44,9 @@ h1 {
 }
 
 .monster {
-  margin: 40px;
-  display: inline-block;
-  text-decoration: none;
   color: #888;
-  font-weight: bold;
-  padding: 20px 70px;
-  font-size: 24px;
   border: 1px solid #000;
   background: linear-gradient(0deg, #777 0%, #000 100%);
-  border-radius: 5px;
   text-shadow: 0px -1px 0px #333;
   box-shadow: 0px 6px 0px #222, 0px 3px 15px rgba(0, 0, 0, 0.4),
     inset 0px 1px 0px rgba(255, 255, 255, 0.3),
@@ -63,19 +56,18 @@ h1 {
 .pagecontent {
   padding-top: 30px;
 }
-.container {
+.row {
   display: flex;
   flex-wrap: wrap;
   background-color: white;
 }
-.item {
+.column {
   flex: 1 0 200px;
-  padding: 20px;
+  padding: 30px;
   /* border: 2px solid red; */
   align-self: stretch;
 }
 
-.item img {
-  transform: rotateZ(-20deg);
-  max-width: 400px;
+.column img {
+  max-width: 100%;
 }

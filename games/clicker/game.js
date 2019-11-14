@@ -5,11 +5,17 @@ window.onload = function() {
   // object containing configuration options
   let gameConfig = {
     type: Phaser.AUTO,
-    width: 680,
-    height: 480,
-    scene: StartScene,
-    backgroundColor: "#000",
     pixelArt: true,
+    scale: {
+      parent: 'gamediv',
+      mode: Phaser.Scale.RESIZE,
+      autoCenter: Phaser.Scale.CENTER_BOTH,
+      zoom: 1,
+      width: 640,
+      height: 480
+    },
+    scene: [StartScene, MainScene],
+    backgroundColor: "#000",
     physics: {
       default: "arcade"
     }
@@ -18,4 +24,5 @@ window.onload = function() {
   window.focus();
 
 };
+
 
