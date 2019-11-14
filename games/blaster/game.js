@@ -39,7 +39,7 @@ var lastFired = 0;
 
 function preload() {
   this.load.image("ship", "assets/Hero.gif");
-  this.load.image("bullet", "assets/bullet.png");
+  this.load.image("bullet", "assets/Ammunition.png");
 }
 
 function create() {
@@ -71,7 +71,7 @@ function create() {
 
   bullets = this.add.group({
     classType: Bullet,
-    maxSize: 30,
+    maxSize: 10,
     runChildUpdate: true
   });
 
