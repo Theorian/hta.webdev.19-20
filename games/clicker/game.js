@@ -1,4 +1,5 @@
 import { MainScene } from './mainScene.js';
+import { StartScene } from './startScene.js';
 
 window.onload = function() {
   // object containing configuration options
@@ -6,14 +7,14 @@ window.onload = function() {
     type: Phaser.AUTO,
     width: 680,
     height: 480,
-    scene: MainScene,
+    scene: StartScene,
     backgroundColor: "#000",
     pixelArt: true,
     physics: {
       default: "arcade"
     }
   };
-  game = new Phaser.Game(gameConfig);
+  var game = new Phaser.Game(gameConfig);
   window.focus();
 
 };
