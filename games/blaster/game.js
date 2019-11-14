@@ -38,7 +38,7 @@ var cursors;
 var lastFired = 0;
 
 function preload() {
-  this.load.image("ship", "assets/Hero.gif");
+  this.load.image("ship", "assets/HeroShip.png");
   this.load.image("bullet", "assets/Ammunition.png");
 }
 
