@@ -30,7 +30,7 @@ window.onload = function() {
 
 };
 
-var bullets;
+var Bullet;
 var ship;
 var speed;
 var stats;
@@ -39,7 +39,12 @@ var lastFired = 0;
 
 function preload() {
   this.load.image("ship", "assets/HeroShip.png");
-  this.load.image("bullet", "assets/Ammunition.png");
+  this.load.image("Bullet", "assets/Ammunition.png");
+  this.load.image("background", "assets/Background.png");
+  this.load.image("bullet", "assets/EnemyshipAmmunition.png");
+  this.load.image("Dead", "assets/HeroDeath.png");
+  this.load.image("badship", "assets/enemy.png");
+  this.load.image("dead", "assets/EnemyshipDeath.png");
 }
 
 function create() {
@@ -47,7 +52,7 @@ function create() {
     Extends: Phaser.GameObjects.Image,
 
     initialize: function Bullet(scene) {
-      Phaser.GameObjects.Image.call(this, scene, 0, 0, "bullet");
+      Phaser.GameObjects.Image.call(this, scene, 0, 0, "Bullet");
 
       this.speed = Phaser.Math.GetSpeed(800, 1);
     },
@@ -99,10 +104,10 @@ function update(time, delta) {
   }
 
   if (cursors.space.isDown && time > lastFired) {
-    var bullet = bullets.get();
+    var Bullet = Bullets.get();
 
     if (bullet) {
-      bullet.fire(ship.x, ship.y);
+      Bullet.fire(ship.x, ship.y);
 
       lastFired = time + 0;
     }
