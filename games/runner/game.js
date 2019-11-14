@@ -32,7 +32,7 @@ let gameOptions = {
   playerStartPosition: 200,
 
   // consecutive jumps allowed
-  jumps: 2
+  jumps: 10000
 };
 
 window.onload = function() {
