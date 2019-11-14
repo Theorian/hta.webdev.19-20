@@ -1,7 +1,7 @@
 body {
   margin: 0px;
   font-family: sans-serif;
-  background: lightgray;
+  background: white;
 }
 
 img {
@@ -11,15 +11,17 @@ img {
 }
 
 h1 {
-  color: rgba(225, 130, 130, 1);
+  color: rgb(0, 151, 58);
+  font-size: 250%;
 }
 
 .hero {
   text-align: center;
-  padding-bottom: 60px;
+  padding: 40px;
   background-size: cover;
   overflow: hidden;
-  /* height: 250px; */
+  background: white url("images/BG.png") no-repeat center; 
+  height: 700px;
 }
 
 .logo {
@@ -34,6 +36,24 @@ h1 {
   font-weight: bold;
   padding: 20px 70px;
   font-size: 24px;
+  border: 1px solid #ace04b;
+  background: linear-gradient(0deg, #f8ff00 0%, #89d410 100%);
+  border-radius: 5px;
+  text-shadow: 0px -1px 0px rgb(2, 109, 73);
+  box-shadow: 0px 6px 0px #ace04b, 0px 3px 15px rgba(0, 0, 0, 0.4),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.3),
+    inset 0px 0px 3px rgba(255, 255, 255, 0.5);
+}
+
+.bigplay{
+  margin: 50px;
+  white-space: nowrap;
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(73, 175, 5);
+  font-weight: bold;
+  padding: 40px 70px;
+  font-size: 70px;
   border: 1px solid #ace04b;
   background: linear-gradient(0deg, #f8ff00 0%, #89d410 100%);
   border-radius: 5px;
