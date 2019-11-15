@@ -63,14 +63,49 @@ h1 {
     inset 0px 0px 3px rgba(255, 255, 255, 0.5);
 }
 
+/* Unique button colors */
+.savior {
+  color: black;
+  border: 1px solid rgb(189, 189, 189);
+  background: linear-gradient(0deg, white 0%, rgb(99, 99, 99) 100%);
+  text-shadow: 0px -1px 0px rgb(255, 255, 255);
+  box-shadow: 0px 6px 0px grey, 0px 3px 15px rgba(0, 0, 0, 0.4),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.3),
+    inset 0px 0px 3px rgba(255, 255, 255, 0.5);
+}
+
 .monster {
-  color: #888;
+  color: rgb(255, 255, 255);
   border: 1px solid #000;
   background: linear-gradient(0deg, #777 0%, #000 100%);
-  text-shadow: 0px -1px 0px #333;
+  text-shadow: 0px -1px 0px rgb(0, 0, 0);
   box-shadow: 0px 6px 0px #222, 0px 3px 15px rgba(0, 0, 0, 0.4),
     inset 0px 1px 0px rgba(255, 255, 255, 0.3),
     inset 0px 0px 3px rgba(255, 255, 255, 0.5);
+}
+
+.pigsfly {
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(219, 35, 179);
+  background: linear-gradient(0deg, rgb(255, 199, 218) 0%, rgb(255, 131, 224) 100%);
+  text-shadow: 0px -1px 0px #333;
+  box-shadow: 0px 6px 0px rgb(255, 110, 166), 0px 3px 15px rgba(0, 0, 0, 0.4),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.3),
+    inset 0px 0px 3px rgba(255, 255, 255, 0.5);
+}
+
+.outlaw {
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 0, 0);
+  background: linear-gradient(0deg, rgb(255, 64, 64) 0%, rgb(255, 0, 0) 100%);
+  text-shadow: 0px -1px 0px rgb(109, 0, 0);
+  box-shadow: 0px 6px 0px rgb(194, 0, 0), 0px 3px 15px rgba(0, 0, 0, 0.4),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.3),
+    inset 0px 0px 3px rgba(255, 255, 255, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .pagecontent {
@@ -80,14 +115,46 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   background-color: white;
+  margin: 0px 10px;
 }
+
+
 .column {
+  text-align: center;
   flex: 1 0 200px;
   padding: 30px;
-  /* border: 2px solid red; */
+  margin: 10px;
   align-self: stretch;
+  background: linear-gradient(0deg, #ddd 0%, #eee 100%);
+  border-radius: 10px;
 }
 
 .column img {
   max-width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .button {
+    margin: 30px;
+    padding: 20px 30px;
+    font-size: 20px;
+    border-radius: 4px;
+  }
+
+  .bigplay{
+    margin: 50px;
+    padding: 30px 50px;
+    font-size: 35px;
+    border-radius: 5px;
+  }
+
+  .logo {
+    max-width: 200px;
+  }
+
+  .bigplay{
+    margin: 10px;
+    padding: 30px 40px;
+    font-size: 40px;
+    border-radius: 5px;
 }
