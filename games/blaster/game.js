@@ -31,7 +31,7 @@ window.onload = function() {
 };
 
 var Bullet;
-var ship;
+var Ship;
 var speed;
 var stats;
 var cursors;
