@@ -37,20 +37,6 @@ var stats;
 var cursors;
 var lastFired = 10;
 
-this.anims.create({
-    key: "jump",
-    frames: this.anims.generateFrameNumbers("Ship", { start: 0, end: 6 }),
-    frameRate: 14,
-    repeat: -1
-  });
-
-  this.anims.create({
-    key: "idle",
-    frames: this.anims.generateFrameNumbers("Ship", { start: 1, end: 1 }),
-    frameRate: 1,
-    repeat: -1
-  });
-}
 function preload() {
   this.load.image("Ship", "assets/HeroShip.png");
   this.load.image("Bullet", "assets/Ammunition.png");
