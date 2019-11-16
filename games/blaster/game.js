@@ -52,7 +52,7 @@ this.anims.create({
   });
 }
 function preload() {
-  this.load.image("ship", "assets/HeroShip.png");
+  this.load.image("Ship", "assets/HeroShip.png");
   this.load.image("Bullet", "assets/Ammunition.png");
   this.load.image("background", "assets/Background.png");
   this.load.image("bullet", "assets/EnemyshipAmmunition.png");
@@ -88,7 +88,7 @@ function create() {
     }
   });
 
-  bullets = this.add.group({
+  Bullets = this.add.group({
     classType: Bullet,
     maxSize: 10,
     runChildUpdate: true
