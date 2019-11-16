@@ -104,7 +104,7 @@ function update(time, delta) {
   if (cursors.space.isDown && time > lastFired) {
     var Bullet = Bullets.get();
 
-    if (bullet) {
+    if (Bullet) {
       Bullet.fire(Ship.x, Ship.y);
 
       lastFired = time + 10;
