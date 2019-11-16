@@ -47,6 +47,21 @@ function preload() {
   this.load.image("dead", "assets/EnemyshipDeath.png");
 }
 
+this.anims.create({
+    key: "jump",
+    frames: this.anims.generateFrameNumbers("Ship", { start: 0, end: 6 }),
+    frameRate: 14,
+    repeat: -1
+  });
+
+  this.anims.create({
+    key: "idle",
+    frames: this.anims.generateFrameNumbers("Ship", { start: 1, end: 1 }),
+    frameRate: 1,
+    repeat: -1
+  });
+}
+
 function create() {
   var Bullet = new Phaser.Class({
     Extends: Phaser.GameObjects.Image,
@@ -80,9 +95,9 @@ function create() {
     runChildUpdate: true
   });
 
-  ship = this.physics.add.sprite(400, 500, "ship").setDepth(1);
+  Ship = this.physics.add.sprite(400, 500, "ship").setDepth(1);
 
-  ship.body.setCollideWorldBounds();
+  Ship.body.setCollideWorldBounds();
 
   cursors = this.input.keyboard.createCursorKeys();
 
@@ -91,23 +106,23 @@ function create() {
 
 function update(time, delta) {
   if (cursors.left.isDown) {
-    ship.x -= speed * delta;
+    Ship.x -= speed * delta;
   }
   if (cursors.right.isDown) {
-    ship.x += speed * delta;
+    Ship.x += speed * delta;
   }
   if (cursors.up.isDown) {
-    ship.y -= speed * delta;
+    Ship.y -= speed * delta;
   }
   if (cursors.down.isDown) {
-    ship.y += speed * delta;
+    Ship.y += speed * delta;
   }
 
   if (cursors.space.isDown && time > lastFired) {
     var Bullet = Bullets.get();
 
     if (bullet) {
-      Bullet.fire(ship.x, ship.y);
+      Bullet.fire(Ship.x, Ship.y);
 
       lastFired = time + 10;
     }
