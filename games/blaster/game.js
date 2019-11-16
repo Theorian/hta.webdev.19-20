@@ -41,9 +41,7 @@ function preload() {
   this.load.image("Ship", "assets/HeroShip.png");
   this.load.image("Bullet", "assets/Hero Ammunition.png");
   this.load.image("background", "assets/Background.png");
-  this.load.image("bullet", "assets/Enemy ship Ammunition (1).png");
-  this.load.image("Dead", "assets/HeroDeath.png");
-  this.load.image("badship", "assets/enemy.png");
+  this.load.image("bad", "assets/enemy.png");
   this.load.image("dead", "assets/EnemyshipDeath.png");
 }
 
@@ -80,7 +78,7 @@ function create() {
     runChildUpdate: true
   });
 
-  Ship = this.physics.add.sprite(400, 500, "ship").setDepth(1);
+  Ship = this.physics.add.sprite(400, 500, "Ship").setDepth(1);
 
   Ship.body.setCollideWorldBounds();
 
