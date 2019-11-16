@@ -2,7 +2,7 @@ window.onload = function() {
   // object containing configuration options
   let gameConfig = {
     type: Phaser.WEBGL,
-    backgroundColor: "grey",
+    backgroundColor: "#ffffff",
     pixelArt: true,
     scale: {
       parent: 'gamediv',
