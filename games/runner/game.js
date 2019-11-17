@@ -1,3 +1,15 @@
+//
+// __          ___                  _____ _             ______ _       
+// \ \        / / |                |  __ (_)           |  ____| |      
+//  \ \  /\  / /| |__   ___ _ __   | |__) |  __ _ ___  | |__  | |_   _ 
+//   \ \/  \/ / | '_ \ / _ \ '_ \  |  ___/ |/ _` / __| |  __| | | | | |
+//    \  /\  /  | | | |  __/ | | | | |   | | (_| \__ \ | |    | | |_| |
+//     \/  \/   |_| |_|\___|_| |_| |_|   |_|\__, |___/ |_|    |_|\__, |
+//                                           __/ |                __/ |
+//                                          |___/                |___/ 
+//
+
+
 // init game variable for future reference
 let game;
 
@@ -42,6 +54,7 @@ window.onload = function() {
     type: Phaser.AUTO,
     width: 1334,
     height: 750,
+    pixelArt: true,
     scene: {
       preload: preload,
       create: create,
@@ -68,9 +81,9 @@ function preload() {
   this.load.image("platform", "platform.png");
 
   // player is a sprite sheet made by 24x48 pixels
-  this.load.spritesheet("player", "player.png", {
-    frameWidth: 24,
-    frameHeight: 48
+  this.load.spritesheet("player", "assets/pig.png", {
+    frameWidth: 32,
+    frameHeight: 32
   });
 }
 
@@ -107,6 +120,8 @@ function create() {
     game.config.height * 0.7,
     "player"
   );
+
+  this.player.scale = 3;
   this.player.setGravityY(gameOptions.playerGravity);
 
   // setting player animation
