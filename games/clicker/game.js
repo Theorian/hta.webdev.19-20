@@ -17,11 +17,11 @@ window.onload = function() {
     pixelArt: true,
     scale: {
       parent: 'gamediv',
-      mode: Phaser.Scale.RESIZE,
+      mode: Phaser.Scale.FIT,
       autoCenter: Phaser.Scale.CENTER_BOTH,
       zoom: 1,
       width: 640,
-      height: 480
+      height: 1320
     },
     scene: [StartScene, MainScene],
     backgroundColor: "#000",

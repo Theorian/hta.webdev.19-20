@@ -16,7 +16,7 @@ let game;
 // global game options
 let gameOptions = {
   // platform speed range, in pixels per second
-  platformSpeedRange: [300, 400],
+  platformSpeedRange: [200, 400],
 
   // spawn range, how far should be the rightmost platform from the right edge
   // before next platform spawns, in pixels
@@ -41,7 +41,7 @@ let gameOptions = {
   jumpForce: 1000,
 
   // player starting X position
-  playerStartPosition: 200,
+  playerStartPosition: 60,
 
   // consecutive jumps allowed
   jumps: 3
@@ -52,10 +52,15 @@ window.onload = function() {
   let gameConfig = {
     key: "PlayGame",
     type: Phaser.AUTO,
-    width: 1334,
-    height: 750,
     pixelArt: true,
     roundPixels: true,
+    scale: {
+      mode: Phaser.Scale.FIT,
+      autoCenter: Phaser.Scale.CENTER_BOTH,
+      zoom: 1,
+      width: 320,
+      height: 660
+    },
     scene: {
       preload: preload,
       create: create,
@@ -122,7 +127,7 @@ function create() {
     "player"
   );
 
-  this.player.scale = 3;
+  this.player.scale = 2;
   this.player.setGravityY(gameOptions.playerGravity);
 
   // setting player animation

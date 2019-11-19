@@ -12,13 +12,13 @@
 
 var config = {
   type: Phaser.WEBGL,
-  backgroundColor: "black",
+  backgroundColor: "#016",
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
     zoom: 1,
-    width: 640,
-    height: 480
+    width: 320,
+    height: 660
   },
   physics: {
     default: "arcade",

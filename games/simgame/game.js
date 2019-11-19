@@ -49,7 +49,6 @@ window.onload = function() {
   var gameConfig = {
     type: Phaser.CANVAS,
     scale: {
-      parent: "gamediv",
       mode: Phaser.Scale.FIT,
       autoCenter: Phaser.Scale.CENTER_BOTH
     },
