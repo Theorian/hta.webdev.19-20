@@ -55,6 +55,7 @@ window.onload = function() {
     width: 1334,
     height: 750,
     pixelArt: true,
+    roundPixels: true,
     scene: {
       preload: preload,
       create: create,
@@ -73,8 +74,8 @@ window.onload = function() {
   };
   game = new Phaser.Game(gameConfig);
   window.focus();
-  resize();
-  window.addEventListener("resize", resize, false);
+  // resize();
+  // window.addEventListener("resize", resize, false);
 };
 
 function preload() {
@@ -141,8 +142,8 @@ function create() {
     this.platformGroup,
     function() {
       // play "run" animation if the player is on a platform
-      if (!this.player.anims.isPlaying) {
-        this.player.anims.play("run");
+      if (this.player.anims.isPlaying) {
+        this.player.anims.stop();
       }
     },
     null,
@@ -182,6 +183,9 @@ function addPlatform(platformWidth, posX, posY) {
 
 // the player jumps when on the ground, or once in the air as long as there are jumps left and the first jump was on the ground
 function jump() {
+  if (!this.player.anims.isPlaying) {
+    this.player.anims.play("run");
+  }
   if (
     this.player.body.touching.down ||
     (this.playerJumps > 0 && this.playerJumps < gameOptions.jumps)
@@ -192,8 +196,7 @@ function jump() {
     this.player.setVelocityY(gameOptions.jumpForce * -1);
     this.playerJumps++;
 
-    // stops animation
-    this.player.anims.stop();
+
   }
 }
 function update() {
@@ -231,7 +234,7 @@ function update() {
         gameOptions.platformHeightRange[0],
         gameOptions.platformHeightRange[1]
       );
-    console.log(rightmostPlatformHeight);
+    // console.log(rightmostPlatformHeight);
     let nextPlatformGap = rightmostPlatformHeight + platformRandomHeight;
     let minPlatformHeight =
       game.config.height * gameOptions.platformVerticalLimit[0];
