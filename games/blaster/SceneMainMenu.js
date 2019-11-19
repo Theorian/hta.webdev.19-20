@@ -68,7 +68,7 @@ class SceneMainMenu extends Phaser.Scene {
       "SPACE SAVIOUR",
       {
         fontFamily: "monospace",
-        fontSize: 48,
+        fontSize: 24,
         fontStyle: "bold",
         color: "#ffffff",
         align: "center"
