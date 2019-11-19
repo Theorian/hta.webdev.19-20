@@ -21,7 +21,7 @@ window.onload = function() {
       autoCenter: Phaser.Scale.CENTER_BOTH,
       zoom: 1,
       width: 640,
-      height: 1320
+      height: 1360
     },
     scene: [StartScene, MainScene],
     backgroundColor: "#000",

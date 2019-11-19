@@ -12,7 +12,7 @@ var game;
 var gameOptions = {
   tileSize: 40,
   gameWidth: 320,
-  gameHeight: 660,
+  gameHeight: 680,
   gameSpeed: 100,
   doubleTapDelay: 300
 };

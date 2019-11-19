@@ -59,7 +59,7 @@ window.onload = function() {
       autoCenter: Phaser.Scale.CENTER_BOTH,
       zoom: 1,
       width: 320,
-      height: 660
+      height: 680
     },
     scene: {
       preload: preload,
