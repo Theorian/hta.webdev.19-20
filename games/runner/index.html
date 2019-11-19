@@ -19,6 +19,9 @@
             padding-top: constant(safe-area-inset-top);
             /* padding-top: env(safe-area-inset-top); */
         }
+    var tileset = map.addTilesetImage(tilesetName, key); // key: texture key
+// var tileset = map.addTilesetImage(tilesetName);  // key = tilesetName
+// var tileset = map.addTilesetImage(tilesetName, key, tileWidth, tileHeight, tileMargin, tileSpacing, gid)
     </style>
     <title>When Pigs Fly</title>
     <script src="../phaser.min.js"></script>
