@@ -52,6 +52,11 @@ export class SokobanScene extends Phaser.Scene {
         this.rightKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT)
         this.upKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP)
         this.downKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN)
+
+        this.input.on("pointerup", this.endSwipe, this);
+        this.tapTime = 0;
+        this.input.on("pointerdown", this.checkTap, this);
+    
     }
 
     update() {
@@ -88,6 +93,47 @@ export class SokobanScene extends Phaser.Scene {
             }
         }
     }
+
+    checkTap (e) {
+        if (e.downTime - this.tapTime < 300) {
+          if (this.undoArray.length > 0) {
+            var undoLevel = this.undoArray.pop();
+            level = [];
+            level = this.copyArray(undoLevel);
+            this.drawLevel(true);
+            this.cameras.main.flash(400);
+          }
+        }
+        this.tapTime = e.downTime;
+      }
+
+      endSwipe (e) {
+        var swipeTime = e.upTime - e.downTime;
+        var swipe = new Phaser.Geom.Point(e.upX - e.downX, e.upY - e.downY);
+        var swipeMagnitude = Phaser.Geom.Point.GetMagnitude(swipe);
+        var swipeNormal = new Phaser.Geom.Point(
+          swipe.x / swipeMagnitude,
+          swipe.y / swipeMagnitude
+        );
+        if (
+          swipeMagnitude > 20 &&
+          swipeTime < 1000 &&
+          (Math.abs(swipeNormal.y) > 0.8 || Math.abs(swipeNormal.x) > 0.8)
+        ) {
+          if (swipeNormal.x > 0.8) {
+            this.moveRight()
+          }
+          if (swipeNormal.x < -0.8) {
+            this.moveLeft()
+          }
+          if (swipeNormal.y > 0.8) {
+            this.moveDown()
+          }
+          if (swipeNormal.y < -0.8) {
+            this.moveUp()
+          }
+        }
+      }
 
     isPlayer(xx, yy) {
         var d = this.mapData.data[xx + yy * this.mapData.width]
