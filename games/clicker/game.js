@@ -15,6 +15,7 @@ window.onload = function() {
   let gameConfig = {
     type: Phaser.AUTO,
     pixelArt: true,
+    roundPixels: true,
     scale: {
       parent: 'gamediv',
       mode: Phaser.Scale.FIT,
