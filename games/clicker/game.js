@@ -13,9 +13,9 @@ import { StartScene } from './startScene.js';
 window.onload = function() {
   // object containing configuration options
   let gameConfig = {
-    type: Phaser.AUTO,
+    type: Phaser.CANVAS,
     pixelArt: true,
-    roundPixels: true,
+    // roundPixels: true,
     scale: {
       parent: 'gamediv',
       mode: Phaser.Scale.FIT,

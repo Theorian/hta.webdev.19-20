@@ -13,8 +13,8 @@ export class MainScene extends Phaser.Scene {
     this.load.image('speech', 'assets/speech.png')
 
     this.load.spritesheet("narrator", "assets/bapsheet.png", {
-      frameWidth: 576,
-      frameHeight: 576
+      frameWidth: 288,
+      frameHeight: 288
     });
 
     this.load.spritesheet("cat", "assets/ShadowCat.png", {
@@ -41,7 +41,7 @@ export class MainScene extends Phaser.Scene {
     this.knifeButton.setCallback(this.incrementKnives, this)
     if (this.knives > 0) this.updateKnivesText()
 
-    this.mugButton = new Button(this, this.scale.width - 100, 190, 'btn_enabled', 'btn_disabled', 'btn_rollover', 'Mug some(thing,one)', '10px')
+    this.mugButton = new Button(this, this.scale.width - 100, 190, 'btn_enabled', 'btn_disabled', 'btn_rollover', 'Mug some(thing,one)', '12px')
     this.mugButton.setCallback(this.mug, this)
 
     this.bg = this.add.sprite(this.scale.width, this.scale.height + 50, "bg");
@@ -87,7 +87,7 @@ export class MainScene extends Phaser.Scene {
 
     this.narrator = this.add.sprite(0, this.scale.height, "narrator");
     this.narrator.setOrigin(0, 1)
-    this.narrator.setScale(.5)
+    // this.narrator.setScale(.5)
     this.narrator.play("narrator");
 
 
