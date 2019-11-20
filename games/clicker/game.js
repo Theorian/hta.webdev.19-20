@@ -23,7 +23,7 @@ window.onload = function() {
       width: 375,
       height: 812
     },
-    scene: [MainScene],
+    scene: [StartScene,MainScene],
     backgroundColor: "#000",
     physics: {
       default: "arcade"

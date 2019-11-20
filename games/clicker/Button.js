@@ -1,5 +1,5 @@
 export class Button extends Phaser.GameObjects.Container {
-    constructor(scene, x, y, enabledImage, disabledImage, rolloverImage, text) {
+    constructor(scene, x, y, enabledImage, disabledImage, rolloverImage, text, textSize = '16px') {
         super(scene);
         this.scene = scene;
         this.x = x;
@@ -10,7 +10,7 @@ export class Button extends Phaser.GameObjects.Container {
         this.rolloverImage = rolloverImage;
 
         this.button = this.scene.add.sprite(0, 0, enabledImage).setInteractive();
-        this.text = this.scene.add.text(0, 0, text, { fontFamily: 'Verdana, Tahoma, serif', fontSize: '16px', fill: '#fff' });
+        this.text = this.scene.add.text(0, 0, text, { fontFamily: 'Verdana, Tahoma, serif', fontSize: textSize, fill: '#fff' });
         Phaser.Display.Align.In.Center(this.text, this.button);
 
         this.add(this.button);

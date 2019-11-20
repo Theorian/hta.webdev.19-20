@@ -4,7 +4,7 @@ class SceneMain extends Phaser.Scene {
   constructor() {
     super({ key: "SceneMain" });
   }
-  
+
   preload() {
     this.load.spritesheet("sprExplosion", "assets/sprExplosion.png", {
       frameWidth: 32,
@@ -81,7 +81,7 @@ class SceneMain extends Phaser.Scene {
     for (var i = 0; i < 4; i++) {
       var keys = ["sprBgMain", "sprBg0", "sprBg1"];
       // var key = keys[Phaser.Math.Between(0, keys.length - 1)];
-      var bg = new ScrollingBackground(this, keys[i], (i+5) * 10);
+      var bg = new ScrollingBackground(this, keys[i], (i + 5) * 10);
       this.backgrounds.push(bg);
     }
 
@@ -93,7 +93,7 @@ class SceneMain extends Phaser.Scene {
     );
     console.log(this);
 
- this.player.play("sprPlayer");
+    this.player.play("sprPlayer");
 
 
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
@@ -108,7 +108,7 @@ class SceneMain extends Phaser.Scene {
 
     this.time.addEvent({
       delay: 1000,
-      callback: function() {
+      callback: function () {
         var enemy = null;
 
         if (Phaser.Math.Between(0, 10) >= 3) {
@@ -120,7 +120,7 @@ class SceneMain extends Phaser.Scene {
         }
         else if (Phaser.Math.Between(0, 10) >= 5) {
           if (this.getEnemiesByType("ChaserShip").length < 5) {
-    
+
             enemy = new ChaserShip(
               this,
               Phaser.Math.Between(0, this.game.config.width),
@@ -135,7 +135,7 @@ class SceneMain extends Phaser.Scene {
             0
           );
         }
-    
+
         if (enemy !== null) {
           enemy.setScale(Phaser.Math.Between(10, 20) * 0.1);
           this.enemies.add(enemy);
@@ -145,7 +145,7 @@ class SceneMain extends Phaser.Scene {
       loop: true
     });
 
-    this.physics.add.collider(this.playerLasers, this.enemies, function(playerLaser, enemy) {
+    this.physics.add.collider(this.playerLasers, this.enemies, function (playerLaser, enemy) {
       if (enemy) {
         if (enemy.onDestroy !== undefined) {
           enemy.onDestroy();
@@ -156,18 +156,18 @@ class SceneMain extends Phaser.Scene {
       }
     });
 
-    this.physics.add.overlap(this.player, this.enemies, function(player, enemy) {
+    this.physics.add.overlap(this.player, this.enemies, function (player, enemy) {
       if (!player.getData("isDead") &&
-          !enemy.getData("isDead")) {
+        !enemy.getData("isDead")) {
         player.explode(false);
         player.onDestroy();
         enemy.explode(true);
       }
     });
 
-    this.physics.add.overlap(this.player, this.enemyLasers, function(player, laser) {
+    this.physics.add.overlap(this.player, this.enemyLasers, function (player, laser) {
       if (!player.getData("isDead") &&
-          !laser.getData("isDead")) {
+        !laser.getData("isDead")) {
         player.explode(false);
         player.onDestroy();
         laser.destroy();
@@ -188,7 +188,7 @@ class SceneMain extends Phaser.Scene {
 
   update() {
 
-    scoreText.text = "Score: "+ scoreNumber;
+    scoreText.text = "Score: " + scoreNumber;
 
     if (!this.player.getData("isDead")) {
       this.player.update();
