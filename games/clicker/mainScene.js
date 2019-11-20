@@ -12,9 +12,9 @@ export class MainScene extends Phaser.Scene {
     this.load.image('bg', 'assets/bg.png')
     this.load.image('speech', 'assets/speech.png')
 
-    this.load.spritesheet("narrator", "assets/bap.png", {
-      frameWidth: 288,
-      frameHeight: 288
+    this.load.spritesheet("narrator", "assets/bapsheet.png", {
+      frameWidth: 576,
+      frameHeight: 576
     });
 
     this.load.spritesheet("cat", "assets/ShadowCat.png", {
@@ -87,7 +87,7 @@ export class MainScene extends Phaser.Scene {
 
     this.narrator = this.add.sprite(0, this.scale.height, "narrator");
     this.narrator.setOrigin(0, 1)
-
+    this.narrator.setScale(.5)
     this.narrator.play("narrator");
 
 
