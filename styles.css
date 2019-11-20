@@ -20,7 +20,7 @@ h1 {
   padding: 40px;
   background-size: cover;
   overflow: hidden;
-  background: white url("images/BG.png") no-repeat center; 
+  background: white url("images/BG.png") no-repeat center;
   height: 700px;
 }
 
@@ -45,7 +45,7 @@ h1 {
     inset 0px 0px 3px rgba(255, 255, 255, 0.5);
 }
 
-.bigplay{
+.bigplay {
   margin: 50px;
   white-space: nowrap;
   display: inline-block;
@@ -87,7 +87,11 @@ h1 {
 .pigsfly {
   color: rgb(255, 255, 255);
   border: 1px solid rgb(219, 35, 179);
-  background: linear-gradient(0deg, rgb(255, 199, 218) 0%, rgb(255, 131, 224) 100%);
+  background: linear-gradient(
+    0deg,
+    rgb(255, 199, 218) 0%,
+    rgb(255, 131, 224) 100%
+  );
   text-shadow: 0px -1px 0px #333;
   box-shadow: 0px 6px 0px rgb(255, 110, 166), 0px 3px 15px rgba(0, 0, 0, 0.4),
     inset 0px 1px 0px rgba(255, 255, 255, 0.3),
@@ -118,7 +122,6 @@ html {
   margin: 0px 10px;
 }
 
-
 .column {
   text-align: center;
   flex: 1 0 200px;
@@ -141,7 +144,7 @@ html {
     border-radius: 4px;
   }
 
-  .bigplay{
+  .bigplay {
     margin: 50px;
     padding: 30px 50px;
     font-size: 35px;
@@ -152,9 +155,10 @@ html {
     max-width: 200px;
   }
 
-  .bigplay{
+  .bigplay {
     margin: 10px;
     padding: 30px 40px;
     font-size: 40px;
     border-radius: 5px;
+  }
 }
