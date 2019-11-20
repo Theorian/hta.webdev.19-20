@@ -54,7 +54,7 @@ export class MainScene extends Phaser.Scene {
 
     this.progressStep = (localStorage.getItem('progressStep')) ? JSON.parse(localStorage.getItem('progressStep')) : 0;;
 
-    this.resetButton = new Button(this, this.scale.width - 80, this.scale.height - 30, 'btn_enabled', 'btn_disabled', 'btn_rollover', 'Reset Game')
+    this.resetButton = new Button(this, this.scale.width - 80, this.scale.height - 40, 'btn_enabled', 'btn_disabled', 'btn_rollover', 'Reset Game')
     this.resetButton.setCallback(() => {
       localStorage.removeItem('dollars')
       localStorage.removeItem('knives')
@@ -85,7 +85,7 @@ export class MainScene extends Phaser.Scene {
       repeat: -1
     });
 
-    this.narrator = this.add.sprite(0, this.scale.height, "narrator");
+    this.narrator = this.add.sprite(0, this.scale.height-20, "narrator");
     this.narrator.setOrigin(0, 1)
     // this.narrator.setScale(.5)
     this.narrator.play("narrator");
